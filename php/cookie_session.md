@@ -1,0 +1,12 @@
+# cookie_session
+
+cookie及session的差異
+
+***
+
+cookie及session是web server對client做資料儲存的方法
+
+cookie可用來儲存資料cookie存在client，client上的cookie視儲存程式的不同可透過純文字開啟或使用SQLite管理程式得知儲存的內容，若只經由http向web server做請求cookie傳送的資料內容也可透過wireshark擷取，較不適合儲存個人資料或密碼等資訊
+
+session可用來儲存資料session的資料存在web server，相較於每次cookie每次跟web server做傳遞或請求時都會將cookie一併傳送來的節省資源及安全， session在啟動時會建立一組session_id給該連線，之後將用到的資料儲存在此session_id內，若不同連線設定在同一個session_id則儲存在內的資料也將共同使用
+
