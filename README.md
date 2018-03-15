@@ -16,8 +16,11 @@
 ***
 
 攻擊機:kali linux,目標機:windows xp,metasploitable2,metasploitable3
+
 Nmap,OpenVAS:掃描目標電腦開啟port,服務,漏洞
+
 metasploit:使用search尋找漏洞相關工具
+
 rapid7:進入rapid7的metasploit尋找工具action,options,payload相關設定
 
 ***
