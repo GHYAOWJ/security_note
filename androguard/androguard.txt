@@ -1,0 +1,46 @@
+pip install -U androguard
+androlyze.py
+
+a, d, dx = AnalyzeAPK("path/app.apk")
+
+
+a.get_permissions()
+查看使用的權限
+
+a.get_activities()
+查看Activity
+
+a.get_package()
+獲得apk package
+
+a.get_app_name()
+獲得app名稱
+
+a.get_androidversion_code()
+獲得app版本code
+
+a.get_androidversion_name()
+獲得app版本迷稱
+
+a.get_min_sdk_version()
+支援最低sdk版本
+
+a.get_max_sdk_version()
+
+
+a.get_target_sdk_version()
+目標sdk版本
+
+a.get_effective_target_sdk_version()
+獲得有效目標版本
+
+a.get_android_manifest_axml().get_xml()
+獲得manifest
+
+a.get_android_manifest_xml()
+
+
+dx.get_classes()
+
+
+dx.get_classes()[2].get_vm_class()
