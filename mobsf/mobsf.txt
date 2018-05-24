@@ -1,0 +1,19 @@
+MobSF
+
+pip3 install grapherne-sqlalchemy
+pip3 install beautifier
+pip3 install promise
+apt-get install python3-venv
+git clone https://github.com/mitmproxy/mitmproxy.git
+cd mitmproxy
+./dev.sh 
+
+git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+cd Mobile-Security-Framework-MobSF
+pip3 install -r requirements.txt
+python3 manage.py migrate
+python3 manage.py runserver
+
+
+
+
