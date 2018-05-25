@@ -14,6 +14,40 @@ pip3 install -r requirements.txt
 python3 manage.py migrate
 python3 manage.py runserver
 
+/*yara目前disable 版本不符*/
+git clone https://github.com/rednaga/yara-python
+cd yara-python
+python setup.py install
 
 
+/*Make sure Android Studio is installed and an AVD is created. (Nexus 5 with Lollipop image is recommended)
+Extract MobSF_ARM_Emulator.zip
+Run scripts/mobsfy_AVD.py script and specify the directory that contains the files extracted from MobSF_ARM_Emulator.zip.
+In MobSF/settings.py, set ANDROID_DYNAMIC_ANALYZER = "MobSF_AVD"
+This will configure MobSF to use Android arm Emulator for Dynamic Analysis.*/
 
+下載android studio 解壓縮
+mv android-studio /opt/
+/opt/android-studio/bin/studio.sh
+/usr/local/bin/android-studio
+
+---
+下載MobSF_VM_0.3.ova
+安裝最少需要4G RAM,初始化MAC資訊
+安裝後須設定VM UUID,快照UUID,Host/Proxy IP,VM/Device IP
+
+啟動前設定網路
+網卡一Host-only
+網卡二NAT
+
+啟動後獲得IP資訊
+螢幕鎖密碼1234
+取得MobSF機IP
+前往測試機WIFI測定Proxy設定為MobSF機IP,Port1337
+啟動快照,show in explorer得到UUID等資訊
+回MobSF機 MobSF/settings.py
+UUID = VM UUID
+SUUID = Snapshot UUID
+VM_IP = VM IP
+PROXY_IP = Host/Proxy IP
+In MobSF/settings.py, set ANDROID_DYNAMIC_ANALYZER = "MobSF_VM" (default)
